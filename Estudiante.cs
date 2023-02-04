@@ -26,7 +26,7 @@ namespace Tarea2
                 Console.WriteLine("2- Buscar Estudiante: ");
                 Console.WriteLine("3- Asignar nota al estudiante");              
                 Console.WriteLine("4- Imprimir Estudiantes");              
-                Console.WriteLine("5- Eliminar Estudiantes");
+                Console.WriteLine("5- Modificar Estudiantes");
                 Console.WriteLine("6- Salir"); 
                 Console.WriteLine("Digite una opcion: ");
                 opcion = byte.Parse(Console.ReadLine());
@@ -45,7 +45,7 @@ namespace Tarea2
                         Imprimir();
                         break;
                     case 5:
-
+                        Modificar();
                         break;                   
                     case 6:
                         System.Environment.Exit(0);
@@ -55,7 +55,7 @@ namespace Tarea2
 
                 }
 
-            } while (opcion != 5); 
+            } while (opcion != 6); 
 
 
         }
@@ -142,7 +142,26 @@ namespace Tarea2
 
         private static void Modificar()
         {
-            
+            Console.WriteLine("Digite el nombre: ");
+            string nombre = Console.ReadLine();
+            bool existe = false;
+            for (int i = 0; i < Estudiante.nombre.Length; i++)
+            {
+                if (nombre.Equals(Estudiante.nombre[i]))
+                {
+                    Console.WriteLine("Digite el nuevo nombre: ");
+                    string nombreEstudiante = Console.ReadLine();
+                    Estudiante.nombre[i] = nombreEstudiante;
+
+                    existe = true;
+                    break;
+                }
+            }
+            if (existe == false)
+            {
+                Console.WriteLine("Estudiante No Existe");
+            }
+
         }
 
 
