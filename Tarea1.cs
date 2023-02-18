@@ -7,7 +7,7 @@ using System.Xml.Schema;
 
 namespace Tarea1
 {
-    internal class Program
+    internal class Tarea1
     {
         static void Main(string[] args)
         {
